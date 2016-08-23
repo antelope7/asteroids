@@ -17,6 +17,8 @@ KEY_CODES = {
 }
 
 //test
+
+
 KEY_STATUS = { keyDown:false };
 for (code in KEY_CODES) {
   KEY_STATUS[KEY_CODES[code]] = false;
@@ -422,6 +424,7 @@ Ship = function () {
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
+        this.delayBeforeBullet = 10;
         for (var i = 0; i < this.bullets.length; i++) {
           if (!this.bullets[i].visible) {
             SFX.laser();
